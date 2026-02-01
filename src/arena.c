@@ -11,7 +11,7 @@ struct Arena {
 };
 
 Arena* arena_create(size_t capacity) {
-	Arena* arena = malloc(sizeof *arena);
+	Arena *arena = malloc(sizeof *arena);
 	if (!arena) { 
 		return NULL; 
 	}
