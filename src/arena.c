@@ -1,7 +1,7 @@
 #include "arena.h"
 #include <stdlib.h>
 
-#define ARENA_ALIGN sizeof(void*)
+#define ARENA_ALIGN sizeof(void *)
 #define ALIGN_UP_POW2(val, align) (((val) + (align) - 1) & ~((align) - 1))
 
 struct Arena {
@@ -10,7 +10,7 @@ struct Arena {
 	size_t pos;
 };
 
-Arena* arena_create(size_t capacity) {
+Arena *arena_create(size_t capacity) {
 	Arena *arena = malloc(sizeof *arena);
 	if (!arena) { 
 		return NULL; 
@@ -37,7 +37,7 @@ void arena_destroy(Arena *arena) {
 	free(arena);
 }
 
-void* arena_alloc(Arena *arena, size_t size) {
+void *arena_alloc(Arena *arena, size_t size) {
 	if (!arena) {
 		return NULL;
 	}
